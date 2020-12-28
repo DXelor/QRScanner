@@ -3,16 +3,17 @@
 Un proyecto para aprender a usar Mapas y scanear codigo QR 
 
 
+# Verciones
+
+0.02 - agregado el boton de scanQR (sin funcionalidad).
+0.01 - agregada la barra de navegacion con los botones de: Mapa y Direcciones (sin funcionalidad).
+
 
 # Notas
 
 # Bugs
 
-
 # Fixes
-
-
-
 
 ## Flutter
 
