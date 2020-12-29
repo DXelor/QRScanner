@@ -3,7 +3,9 @@
 Un proyecto para aprender a usar Mapas y scanear codigo QR 
 
 
-# Verciones
+# Versiones
+
+0.04 _ inicio de rutas y direccionamiento
 
 0.03 - agregados los themas de perzonalizacion(cambiar colores a la app)
 
