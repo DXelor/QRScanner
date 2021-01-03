@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         ],
         title: Text('Historial'),
       ),
-      body: MapasPage(),
+      body: _HomePageBody(),
       bottomNavigationBar: CustomNavigationBar(),
       floatingActionButton: ScanButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
