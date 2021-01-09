@@ -1,0 +1,140 @@
+//ser o estar
+I am.
+you are.
+he, she, it is.
+we are.
+they are.
+I am who I am.
+
+//tener
+I have
+you have
+he, she, it has
+we have
+they have
+
+//hacer
+I do
+you do
+he, she, it does
+we do
+they do
+
+//decir
+I say
+you say
+he, she, it says
+we say
+they say
+
+//obtener
+I get
+you get
+he, she, it gets
+we get
+they get
+
+//hacer
+I make
+you make
+he, she, it makes
+we make
+they make
+
+// ir
+I go
+you go
+he, she, it goes
+we go
+they go
+
+//saber, conocer
+I know
+you know
+he, she, it knows
+we know
+they know
+
+//tomar
+I take
+you take
+he, she, it takes
+we take
+they take
+
+//ver
+I see
+you see
+he, she, it sees
+we see
+they see
+
+//venir
+I come
+you come
+he, she, it comes
+we come
+they come
+
+//pensar
+I think
+you think
+he, she, it thinks
+we think
+they think
+
+//mirar
+I look
+you look
+he, she, it looks
+we look
+they look
+
+//querer
+I want
+you want
+he, she, it wants
+we want
+they want
+
+//dar
+I give
+you give
+he, she, it gives
+we give
+they give
+
+//usar
+I use
+you use
+he, she, it uses
+we use
+they use
+
+//encontrar
+I find
+you find
+he, she, it finds
+we find
+they find
+
+//decir
+I tell
+you tell
+he, she, it tells
+we tell
+they tell
+
+//preguntar
+I ask
+you ask
+he, she, it asks
+we ask
+they ask
+
+//trabajar
+I work
+you work
+he, she, it works
+we work
+they work
