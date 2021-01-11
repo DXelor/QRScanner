@@ -55,4 +55,12 @@ class DBProvider {
     ''');
     return res;
   }
+
+  nuevoScan(ScanModel nuevoScan) async {
+    final db = await database;
+    final res = await db.insert('Scans', nuevoScan.toJson());
+    print(res);
+    //res: id del ultimo registro insertado
+    return res;
+  }
 }
