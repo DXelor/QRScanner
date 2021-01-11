@@ -8,8 +8,6 @@ import 'package:qr_reader/providers/ui_provider.dart';
 import 'package:qr_reader/widgets/custom_navigatorbar.dart';
 import 'package:qr_reader/widgets/scan_button.dart';
 
-import 'package:qr_reader/providers/db_provider.dart';
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,8 +37,9 @@ class _HomePageBody extends StatelessWidget {
     final currentIndex = uiProvider.selectedMenuOpt;
 
     //Temporal BD
-    final tempScan = new ScanModel(valor: 'http://google.com');
-    DBProvider.db.nuevoScan(tempScan);
+    //final tempScan = new ScanModel(valor: 'http://google.com');
+    //DBProvider.db.nuevoScan(tempScan);
+    //DBProvider.db.getTodosLosScans().then(print);
 
 //=====================================================================
     switch (currentIndex) {
