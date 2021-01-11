@@ -66,12 +66,12 @@ class DBProvider {
   }
 
   //Obtener registros por id
-  // Future<ScanModel> getScanById(int id) async {
-  //   final db = await database;
-  //   final res = await db.query('Scans', where: 'id = ?', whereArgs: [id]);
+  Future<ScanModel> getScanById(int id) async {
+    final db = await database;
+    final res = await db.query('Scans', where: 'id = ?', whereArgs: [id]);
 
-  //   return res.isNotEmpty ? ScanModel.fromJson(res.first) : null;
-  // }
+    return res.isNotEmpty ? ScanModel.fromJson(res.first) : null;
+  }
 
   //Obtener todos los registros
   Future<List<ScanModel>> getTodosLosScans() async {
@@ -92,10 +92,28 @@ class DBProvider {
   }
 
   //actualizar registros
-  Future<int> updateScan(ScanModel nuevoScan) async {
+  Future<int> updateScans(ScanModel nuevoScan) async {
     final db = await database;
     final res = await db.update('Scans', nuevoScan.toJson(),
         where: 'id = ?', whereArgs: [nuevoScan.id]);
+
+    return res;
+  }
+
+  //borrar registros
+  Future<int> deleteScans(int id) async {
+    final db = await database;
+    final res = await db.delete('Scans', where: 'id = ?', whereArgs: [id]);
+
+    return res;
+  }
+
+  //borrar todos los registros
+  Future<int> deleteAllScans() async {
+    final db = await database;
+    final res = await db.rawDelete('''
+      DELETE FROM Scans
+    ''');
 
     return res;
   }
