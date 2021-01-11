@@ -56,6 +56,7 @@ class DBProvider {
     return res;
   }
 
+  //crear nuevo registro
   nuevoScan(ScanModel nuevoScan) async {
     final db = await database;
     final res = await db.insert('Scans', nuevoScan.toJson());
@@ -64,12 +65,15 @@ class DBProvider {
     return res;
   }
 
+  //Obtener registros por id
   // Future<ScanModel> getScanById(int id) async {
   //   final db = await database;
   //   final res = await db.query('Scans', where: 'id = ?', whereArgs: [id]);
 
   //   return res.isNotEmpty ? ScanModel.fromJson(res.first) : null;
   // }
+
+  //Obtener todos los registros
   Future<List<ScanModel>> getTodosLosScans() async {
     final db = await database;
     final res = await db.query('Scans');
@@ -77,6 +81,7 @@ class DBProvider {
     return res.isNotEmpty ? res.map((s) => ScanModel.fromJson(s)).toList() : [];
   }
 
+  //Obtener registros por tipo
   Future<List<ScanModel>> getScansByType(String tipo) async {
     final db = await database;
     final res = await db.rawQuery('''
@@ -84,5 +89,14 @@ class DBProvider {
     ''');
 
     return res.isNotEmpty ? res.map((s) => ScanModel.fromJson(s)).toList() : [];
+  }
+
+  //actualizar registros
+  Future<int> updateScan(ScanModel nuevoScan) async {
+    final db = await database;
+    final res = await db.update('Scans', nuevoScan.toJson(),
+        where: 'id = ?', whereArgs: [nuevoScan.id]);
+
+    return res;
   }
 }
