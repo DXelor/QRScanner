@@ -30,7 +30,7 @@ class DBProvider {
 
     //crear base de datos
 
-    return await openDatabase(path, version: 2, onOpen: (db) {},
+    return await openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {
       await db.execute('''
                 CREATE TABLE Scans(
@@ -57,7 +57,7 @@ class DBProvider {
   }
 
   //crear nuevo registro
-  nuevoScan(ScanModel nuevoScan) async {
+  Future<int> nuevoScan(ScanModel nuevoScan) async {
     final db = await database;
     final res = await db.insert('Scans', nuevoScan.toJson());
     print(res);
@@ -66,7 +66,7 @@ class DBProvider {
   }
 
   //Obtener registros por id
-  Future<ScanModel> getScanById(int id) async {
+  Future<ScanModel> getScansById(int id) async {
     final db = await database;
     final res = await db.query('Scans', where: 'id = ?', whereArgs: [id]);
 
