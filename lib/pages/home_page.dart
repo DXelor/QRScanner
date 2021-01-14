@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
+import 'package:qr_reader/providers/db_provider.dart';
 import 'package:qr_reader/providers/scan_list_provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
 
@@ -41,6 +42,9 @@ class _HomePageBody extends StatelessWidget {
 
     //Cambiar para mostrar la pagina respectiva
     final currentIndex = uiProvider.selectedMenuOpt;
+
+    //temporal
+    DBProvider.db.database;
 
     //Usar el ScanListProvider
     final scanListProvider =
