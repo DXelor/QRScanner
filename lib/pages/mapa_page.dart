@@ -13,17 +13,19 @@ class _MapaPageState extends State<MapaPage> {
   Completer<GoogleMapController> _controller = Completer();
   @override
   Widget build(BuildContext context) {
-    final CameraPosition puntoInicial = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962),
-      zoom: 14.4746,
-    );
     final ScanModel scan = ModalRoute.of(context).settings.arguments;
+    final CameraPosition puntoInicial = CameraPosition(
+      target: scan.getLatLng(),
+      zoom: 17.5,
+      tilt: 70,
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text('mapa'),
       ),
       body: GoogleMap(
-        mapType: MapType.hybrid,
+        myLocationButtonEnabled: false,
+        mapType: MapType.normal,
         initialCameraPosition: puntoInicial,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
