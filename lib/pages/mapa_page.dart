@@ -11,6 +11,7 @@ class MapaPage extends StatefulWidget {
 
 class _MapaPageState extends State<MapaPage> {
   Completer<GoogleMapController> _controller = Completer();
+  MapType maptype = MapType.normal;
   @override
   Widget build(BuildContext context) {
     final ScanModel scan = ModalRoute.of(context).settings.arguments;
@@ -27,13 +28,35 @@ class _MapaPageState extends State<MapaPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('mapa'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.location_history),
+              onPressed: () async {
+                final GoogleMapController controller = await _controller.future;
+                controller.animateCamera(CameraUpdate.newCameraPosition(
+                    CameraPosition(
+                        target: scan.getLatLng(), zoom: 17.5, tilt: 50)));
+              })
+        ],
       ),
       body: GoogleMap(
         myLocationButtonEnabled: false,
-        mapType: MapType.normal,
+        mapType: maptype,
         initialCameraPosition: puntoInicial,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.layers),
+        onPressed: () {
+          setState(() {
+            if (maptype == MapType.normal) {
+              maptype = MapType.hybrid;
+            } else {
+              maptype = MapType.normal;
+            }
+          });
         },
       ),
     );
