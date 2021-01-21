@@ -19,6 +19,11 @@ class _MapaPageState extends State<MapaPage> {
       zoom: 17.5,
       tilt: 70,
     );
+
+    //marcadores
+    Set<Marker> markers = new Set<Marker>();
+    markers.add(new Marker(
+        markerId: MarkerId('geo-location'), position: scan.getLatLng()));
     return Scaffold(
       appBar: AppBar(
         title: Text('mapa'),
